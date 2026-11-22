@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Cores do projeto e ajustes sobre as variáveis do Bootstrap */
+:root {
+  --cor-principal: #0055A4;
+  --cor-destaque: #228B22;
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-color: #333333;
+  --bs-body-bg: #f0f7f7;
+}
+
+/* Títulos na cor principal (Atividade 3, Sandbox e Paleta) */
+.titulo-principal {
+  color: var(--cor-principal);
+}
