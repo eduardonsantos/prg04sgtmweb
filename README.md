@@ -32,6 +32,8 @@ Sistema distribuído em duas partes que se comunicam por HTTP/JSON:
 
 ## Estrutura do Projeto
 
+O código fica organizado **por funcionalidade**: cada área do sistema tem a sua pasta, com os próprios componentes e páginas. O que é compartilhado por todo o sistema fica em `infrastructure`.
+
 ```
 prg04sgtmweb/
 ├── public/
@@ -40,26 +42,32 @@ prg04sgtmweb/
 │       ├── favicon/              # Ícones do site
 │       └── images/               # Imagens responsivas (400, 700 e 1000 px)
 ├── src/
-│   ├── infrastructure/
-│   │   ├── components/           # Componentes reutilizáveis
+│   ├── infrastructure/           # Compartilhado por todo o sistema
+│   │   ├── components/
 │   │   │   ├── AmostraCor.jsx
 │   │   │   ├── AmostraCor.module.css
 │   │   │   ├── Avisos.jsx
 │   │   │   ├── Destaque.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
-│   │   │   ├── LoginForm.jsx
 │   │   │   ├── Navbar.jsx
-│   │   │   ├── SobreProjeto.jsx
-│   │   │   ├── UserRow.jsx
-│   │   │   └── UserTable.jsx
-│   │   └── pages/                # Uma página para cada rota
-│   │       ├── Admin.jsx
+│   │   │   └── SobreProjeto.jsx
+│   │   └── pages/
 │   │       ├── Atividade3.jsx
 │   │       ├── Home.jsx
-│   │       ├── Login.jsx
 │   │       ├── Paleta.jsx
 │   │       └── Sandbox.jsx
+│   ├── auth/                     # Autenticação
+│   │   ├── components/
+│   │   │   └── LoginForm.jsx
+│   │   └── pages/
+│   │       └── Login.jsx
+│   ├── admin/                    # Área administrativa
+│   │   ├── components/
+│   │   │   ├── UserRow.jsx
+│   │   │   └── UserTable.jsx
+│   │   └── pages/
+│   │       └── Admin.jsx
 │   ├── App.jsx                   # Navbar, rotas e Footer
 │   ├── index.css                 # Estilos globais
 │   └── main.jsx                  # Ponto de entrada (Bootstrap e Router)
@@ -74,11 +82,17 @@ prg04sgtmweb/
 | Pasta / Arquivo | Descrição |
 | --- | --- |
 | `public/assets/` | Recursos estáticos: áudio, favicons e imagens (acessados por `/assets/...`) |
-| `src/infrastructure/` | Código da aplicação, organizado por tipo. Concentra os componentes e as páginas do sistema e abre espaço para novas áreas no futuro |
-| `src/infrastructure/components/` | Blocos visuais reutilizáveis: navegação, rodapé, cards, formulário de login e tabela de usuários |
-| `src/infrastructure/pages/` | Telas do sistema, uma para cada rota |
+| `src/infrastructure/` | Componentes e páginas compartilhados: navegação, rodapé, cabeçalho, página inicial e páginas de apoio |
+| `src/auth/` | Tudo de autenticação: formulário e página de login |
+| `src/admin/` | Tudo da área administrativa: tabela de usuários e página do painel |
 | `src/App.jsx` | Define a Navbar, o Footer e as rotas da aplicação |
 | `src/index.css` | Estilos globais (fonte, cores do projeto e ajustes sobre o Bootstrap) |
+
+### Onde colocar cada arquivo novo
+
+- Se **uma só área** usa o componente, ele fica na pasta dessa área (por exemplo, `LoginForm` em `auth`).
+- Se **duas ou mais áreas** usam o componente, ele vai para `infrastructure` (por exemplo, `Header`, usado em Login e Admin).
+- Uma área nova do sistema (contribuintes, imóveis, guias de IPTU) ganha uma pasta própria dentro de `src/`, com `components/` e `pages/`.
 
 ### Rotas
 
