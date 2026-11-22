@@ -138,7 +138,7 @@ Para as funcionalidades que dependem de dados, mantenha o Backend em execução.
 
 ## Publicação
 
-Aplicação publicada na Vercel: _(adicionar aqui o link público depois do deploy)_
+Aplicação publicada na Vercel: https://prg04sgtmweb.vercel.app
 
 ## Autor
 
