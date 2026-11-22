@@ -33,35 +33,37 @@ Sistema distribuído em duas partes que se comunicam por HTTP/JSON:
 ## Estrutura do Projeto
 
 ```
-prg04atividadeswebparte2/
+prg04sgtmweb/
 ├── public/
 │   └── assets/
 │       ├── audio/                # background-music.mp3
 │       ├── favicon/              # Ícones do site
 │       └── images/               # Imagens responsivas (400, 700 e 1000 px)
 ├── src/
-│   ├── components/               # Componentes reutilizáveis
-│   │   ├── AmostraCor.jsx
-│   │   ├── AmostraCor.module.css
-│   │   ├── Avisos.jsx
-│   │   ├── Destaque.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   ├── LoginForm.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── SobreProjeto.jsx
-│   │   ├── UserRow.jsx
-│   │   └── UserTable.jsx
-│   ├── pages/                    # Uma página para cada rota
-│   │   ├── Admin.jsx
-│   │   ├── Atividade3.jsx
-│   │   ├── Home.jsx
-│   │   ├── Login.jsx
-│   │   ├── Paleta.jsx
-│   │   └── Sandbox.jsx
+│   ├── infrastructure/
+│   │   ├── components/           # Componentes reutilizáveis
+│   │   │   ├── AmostraCor.jsx
+│   │   │   ├── AmostraCor.module.css
+│   │   │   ├── Avisos.jsx
+│   │   │   ├── Destaque.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── LoginForm.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── SobreProjeto.jsx
+│   │   │   ├── UserRow.jsx
+│   │   │   └── UserTable.jsx
+│   │   └── pages/                # Uma página para cada rota
+│   │       ├── Admin.jsx
+│   │       ├── Atividade3.jsx
+│   │       ├── Home.jsx
+│   │       ├── Login.jsx
+│   │       ├── Paleta.jsx
+│   │       └── Sandbox.jsx
 │   ├── App.jsx                   # Navbar, rotas e Footer
 │   ├── index.css                 # Estilos globais
 │   └── main.jsx                  # Ponto de entrada (Bootstrap e Router)
+├── .oxlintrc.json                # Configuração do linter
 ├── index.html                    # Documento base da aplicação
 ├── package.json
 ├── vite.config.js
@@ -72,8 +74,9 @@ prg04atividadeswebparte2/
 | Pasta / Arquivo | Descrição |
 | --- | --- |
 | `public/assets/` | Recursos estáticos: áudio, favicons e imagens (acessados por `/assets/...`) |
-| `src/components/` | Blocos visuais reutilizáveis: navegação, rodapé, cards, formulário de login e tabela de usuários |
-| `src/pages/` | Telas do sistema, uma para cada rota |
+| `src/infrastructure/` | Código da aplicação, organizado por tipo. Concentra os componentes e as páginas do sistema e abre espaço para novas áreas no futuro |
+| `src/infrastructure/components/` | Blocos visuais reutilizáveis: navegação, rodapé, cards, formulário de login e tabela de usuários |
+| `src/infrastructure/pages/` | Telas do sistema, uma para cada rota |
 | `src/App.jsx` | Define a Navbar, o Footer e as rotas da aplicação |
 | `src/index.css` | Estilos globais (fonte, cores do projeto e ajustes sobre o Bootstrap) |
 
@@ -95,7 +98,7 @@ Pré-requisito: [Node.js](https://nodejs.org) em uma versão recente (LTS).
 1. Clone o repositório:
    ```bash
    git clone <url-do-repositorio>
-   cd prg04atividadeswebparte2
+   cd prg04sgtmweb
    ```
 2. Instale as dependências:
    ```bash
