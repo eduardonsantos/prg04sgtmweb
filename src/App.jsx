@@ -10,18 +10,20 @@ import Admin from './admin/pages/Admin.jsx';
 
 function App() {
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/atividade-3" element={<Atividade3 />} />
-        <Route path="/sandbox" element={<Sandbox />} />
-        <Route path="/paleta" element={<Paleta />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
+      <div className="flex-grow-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/atividade-3" element={<Atividade3 />} />
+          <Route path="/sandbox" element={<Sandbox />} />
+          <Route path="/paleta" element={<Paleta />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
