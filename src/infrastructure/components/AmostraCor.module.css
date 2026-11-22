@@ -1,0 +1,15 @@
+/* Somente as cores da identidade visual; o resto vem das classes do Bootstrap */
+.caixaAzul {
+  background-color: var(--cor-principal);
+  color: #FFFFFF;
+}
+
+.caixaVerde {
+  background-color: var(--cor-destaque);
+  color: #FFFFFF;
+}
+
+.caixaBranca {
+  background-color: #FFFFFF;
+  color: var(--cor-principal);
+}
